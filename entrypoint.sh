@@ -7,9 +7,6 @@ REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
 BRANCH="gh-pages"
 BUNDLE_BUILD__SASSC=--disable-march-tune-native
 
-echo "Installing node packages..."
-npm install
-
 echo "Installing gems..."
 
 bundle config path vendor/bundle
