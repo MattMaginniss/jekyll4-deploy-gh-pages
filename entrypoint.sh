@@ -42,5 +42,6 @@ git add .
 echo "commit..."
 git commit -m "published by GitHub Actions"
 echo "pushing..."
-git push --force ${REPO} main:${BRANCH}
+git remote add origin git@github.com:${GITHUB_REPOSITORY}
+git push -force origin gh-pages
 echo "done!"
