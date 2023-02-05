@@ -19,7 +19,7 @@ if [ ! -z $YARN_ENV ]; then
   yarn
 fi
 
-JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build
+JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build --trace
 
 if [[ -z "${ALGOLIA_API_KEY}" ]]; then
   echo "No Algolia API key provided"
