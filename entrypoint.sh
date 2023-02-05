@@ -2,7 +2,7 @@
 
 set -e
 
-DEST="/docs"
+DEST="${JEKYLL_DESTINATION:-docs}"
 REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 BRANCH="gh-pages"
 BUNDLE_BUILD__SASSC=--disable-march-tune-native
@@ -34,7 +34,6 @@ cd ${DEST}
 git init
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-git config --global init.defaultBranch "gh-pages"
 git add .
 git commit -m "published by GitHub Actions"
-git push --force --repo ${REPO}:${BRANCH}
+git push --force ${REPO} main:${BRANCH}
