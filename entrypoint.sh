@@ -2,7 +2,7 @@
 
 set -e
 
-DEST="${JEKYLL_DESTINATION:-_site}"
+DEST="${JEKYLL_DESTINATION:-docs}"
 REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 BRANCH="gh-pages"
 BUNDLE_BUILD__SASSC=--disable-march-tune-native
@@ -35,5 +35,5 @@ git init
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git add .
-git commit -m "published by GitHub Actions"
-git push --force ${REPO} master:${BRANCH}
+git commit -m "Website update published"
+git push --force ${REPO} gh-pages:${BRANCH}
