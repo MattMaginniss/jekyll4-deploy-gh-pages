@@ -2,7 +2,7 @@
 
 set -e
 
-DEST="${JEKYLL_DESTINATION:-docs}"
+DEST="${JEKYLL_DESTINATION:-_site}"
 REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 BRANCH="gh-pages"
 BUNDLE_BUILD__SASSC=--disable-march-tune-native
@@ -42,6 +42,5 @@ git add .
 echo "commit..."
 git commit -m "published by GitHub Actions"
 echo "pushing..."
-git remote add origin git@github.com:${GITHUB_REPOSITORY}
-git push -force origin gh-pages
+git push --force ${REPO} master:${BRANCH}
 echo "done!"
