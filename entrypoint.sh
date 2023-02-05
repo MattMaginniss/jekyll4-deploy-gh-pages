@@ -2,7 +2,7 @@
 
 set -e
 
-DEST="${JEKYLL_DESTINATION:-docs}"
+DEST="/docs"
 REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 BRANCH="gh-pages"
 BUNDLE_BUILD__SASSC=--disable-march-tune-native
