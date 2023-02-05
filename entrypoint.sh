@@ -31,9 +31,16 @@ echo "Publishing..."
 
 cd ${DEST}
 
+echo "initialized..."
 git init
+echo "name config..."
 git config user.name "${GITHUB_ACTOR}"
+echo "email config..."
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+echo "add..."
 git add .
+echo "commit..."
 git commit -m "published by GitHub Actions"
+echo "pushing..."
 git push --force ${REPO} main:${BRANCH}
+echo "done!"
