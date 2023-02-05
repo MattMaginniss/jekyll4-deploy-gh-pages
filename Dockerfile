@@ -10,8 +10,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # install a modern bundler version
-RUN gem install bundler
-
+RUN gem install bundler -v 2.1.4
 
 
 ADD entrypoint.sh /entrypoint.sh
