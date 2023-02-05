@@ -19,7 +19,7 @@ if [ ! -z $YARN_ENV ]; then
   yarn
 fi
 
-JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build --trace
+JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build
 
 if [[ -z "${ALGOLIA_API_KEY}" ]]; then
   echo "No Algolia API key provided"
@@ -34,6 +34,7 @@ cd ${DEST}
 git init
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+git config --global init.defaultBranch "gh-pages"
 git add .
-git commit -m "Website update published"
-git push --force ${REPO} gh-pages:${BRANCH}
+git commit -m "published by GitHub Actions"
+git push --force --repo ${REPO}:${BRANCH}
