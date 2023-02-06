@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y \
 
 # install a modern bundler version
 RUN gem install bundler
-RUN npm install
 
 
 ADD entrypoint.sh /entrypoint.sh

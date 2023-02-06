@@ -23,8 +23,6 @@ JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build
 
 echo "Publishing..."
 
-cd ${DEST}
-
 echo "initialized..."
 git init
 echo "name config..."
