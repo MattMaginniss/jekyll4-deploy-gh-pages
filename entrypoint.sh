@@ -1,6 +1,4 @@
 #!/bin/bash
-export NVM_DIR=~/.nvm
-source ~/.nvm/nvm.sh
 
 set -e
 
@@ -10,7 +8,7 @@ BRANCH="gh-pages"
 BUNDLE_BUILD__SASSC=--disable-march-tune-native
 
 echo "Installing gems..."
-npm i
+
 bundle config path vendor/bundle
 bundle install --jobs 4 --retry 3
 
