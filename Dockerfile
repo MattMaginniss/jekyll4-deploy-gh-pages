@@ -1,6 +1,8 @@
 FROM ruby:2.7.7
 
-RUN apt-get update && apt-get install -y \
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -\
+    apt-get update && apt-get install -qq --no-install-recommends \
+    nodejs \
     libvips-dev \
     libvips-tools \
     libpng-dev \
@@ -11,7 +13,6 @@ RUN apt-get update && apt-get install -y \
 
 # install a modern bundler version
 RUN gem install bundler
-
 
 ADD entrypoint.sh /entrypoint.sh
 
