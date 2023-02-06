@@ -27,7 +27,7 @@ else
   JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll algolia
 fi
 
-echo "Publishing..."
+echo "Publishing to gh-pages?..."
 
 echo "name config..."
 git config user.name "${GITHUB_ACTOR}"
