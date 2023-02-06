@@ -21,14 +21,12 @@ fi
 
 JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll build
 
-if [[ -z "${ALGOLIA_API_KEY}" ]]; then
-  echo "No Algolia API key provided"
-else
-  JEKYLL_ENV=production NODE_ENV=production bundle exec jekyll algolia
-fi
+echo "Publishing..."
 
-echo "Publishing to gh-pages?..."
+cd ${DEST}
 
+echo "initialized..."
+git init
 echo "name config..."
 git config user.name "${GITHUB_ACTOR}"
 echo "email config..."
