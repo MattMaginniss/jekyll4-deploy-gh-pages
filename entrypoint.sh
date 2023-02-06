@@ -29,8 +29,6 @@ fi
 
 echo "Publishing..."
 
-cd ${DEST}
-
 echo "initialized..."
 git init
 echo "name config..."
