@@ -29,8 +29,6 @@ fi
 
 echo "Publishing..."
 
-echo "initialized..."
-git init
 echo "name config..."
 git config user.name "${GITHUB_ACTOR}"
 echo "email config..."
