@@ -1,7 +1,12 @@
 FROM ruby:2.7.7
 
+ARG REFRESHED_AT
+ENV REFRESHED_AT $REFRESHED_AT
+
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -\
-    apt-get update && apt-get install -qq --no-install-recommends \
+    && apt-get update -qq && apt-get install -qq --no-install-recommends \
     nodejs \
     libvips-dev \
     libvips-tools \
@@ -9,10 +14,14 @@ RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -\
     libwebp-dev \
     libjpeg-dev \
     libheif-dev \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get upgrade -qq \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && npm install -g yarn@1
 
 # install a modern bundler version
 RUN gem install bundler
+
 
 ADD entrypoint.sh /entrypoint.sh
 
