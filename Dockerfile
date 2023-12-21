@@ -5,7 +5,7 @@ ENV REFRESHED_AT $REFRESHED_AT
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -\
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -\
     && apt-get update -qq && apt-get install -qq --no-install-recommends \
     nodejs \
     libvips-dev \
